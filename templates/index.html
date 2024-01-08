@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web_application</title>
+</head>
+<body>
+    <h1>index.html</h1>
+    <img src="{{ url_for('static', filename='images/streamlit.PNG') }}">
+    <h2>タイトル表示</h2>
+    <div class="container">
+        <p id="test">{{my_dict.insert_something}}</p>
+        {% for title in my_dict.insert_something %}
+            {% if title == 'title2' %}
+                <li>{{ title }}</li>
+            {% elif title == 'title3' %}
+                <li>見せられないよ</li>
+            {% else %}
+                <li>xxxx</li>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <script src="{{ url_for('static', filename='js/sample.js') }}"></script>
+</body>
+</html>
+{% endblock %}
